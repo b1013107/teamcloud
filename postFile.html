@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>formsample</title>
+<!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="css/icomoon.css">
+    <!-- Simple Line Icons -->
+    <link rel="stylesheet" href="css/simple-line-icons.css">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <!-- Modernizr JS -->
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div id="form">
+    <h2 class="text-center">Select File<h2>
+    <form action="#" method="post">
+
+    <!-- 非表示にされたtype="file"要素 -->
+        <input id="file" type="file" style="display: none" />
+
+<!-- 代替のインターフェイス-->
+        <div class="row">
+        <div class="col-md-3 text-center">
+                <div class="form-group">
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="form-group">
+                    <input type="text" id="text" class="form-control" placeholder="選択されていません">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <button type="button" id="button" class="btn btn-primary btn-outline" >ファイルを開く</button>
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="form-group">
+                </div>
+            </div>
+            <div class="col-md-12 text-center">
+                <div class="form-group">
+                <br>
+                <input type="submit" name="submit" value="Send file" class="btn btn-success">
+                <!--onclick="closeWindowAndPost" -->
+                </div>
+            </div>  
+        </div>
+
+<script type="text/javascript">
+    var file = document.getElementById( 'file' );
+    var text = document.getElementById( 'text' );
+    var button = document.getElementById( 'button' );
+
+    file.onchange = function()
+    {
+        text.value = this.value;
+    }
+
+    text.onclick = button.onclick = function()
+    {
+        // type="file"要素のclickイベントを発生させる
+        file.click();
+    }
+</script>
+<!--
+<script>
+        function closeWindowAndPost()
+{
+    var form = document.getElementById('form');
+    form.action = '/nextpage';
+    form.target = 'formpost';
+    form.method = 'post';
+    form.submit();
+    window.close(); 
+}
+</script>
+    -->
+</div>
+</body>
+</html>
